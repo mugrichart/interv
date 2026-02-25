@@ -64,12 +64,13 @@ export class InterviewsController {
         @Body('type') type: 'presentation' | 'question_feedback' | 'other',
         @Body('addresser') addresser: string,
         @Body('addressee') addressee: string,
+        @Body('interviewUser') interviewUser: string,
     ) {
         // 1. Transcribe
         const transcript = await this.aiService.transcribe(file.path);
 
         // 2. Synthesize
-        const synthesis = await this.aiService.synthesize(transcript);
+        const synthesis = await this.aiService.synthesize(transcript, interviewUser);
 
         // 3. Create entry
         const entry: InterviewEntry = {
@@ -96,6 +97,7 @@ export class InterviewsController {
     async suggestQuestions(
         @Param('id') id: string,
         @Body('targetPerson') targetPerson?: string,
+        @Body('interviewUser') interviewUser?: string,
     ) {
         const interview = this.interviewsService.findOne(id);
 
@@ -124,6 +126,6 @@ export class InterviewsController {
                 .join('\n');
         }
 
-        return this.aiService.generateQuestions(recentTranscripts, targetPerson);
+        return this.aiService.generateQuestions(recentTranscripts, targetPerson, interviewUser);
     }
 }

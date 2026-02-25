@@ -14,8 +14,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Group Interview Assistant | OR Scholarship",
-  description: "AI-powered transcription and strategic feedback for Operational Research applicants.",
+  description: "AI-powered strategic feedback for Sustainable Energy Systems and Operational Research scholarship applicants.",
 };
+
+import { KeepAlive } from "@/components/KeepAlive";
 
 export default function RootLayout({
   children,
@@ -27,6 +29,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <KeepAlive />
         {children}
       </body>
     </html>

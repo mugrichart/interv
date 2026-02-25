@@ -27,14 +27,17 @@ export class AiService {
         }
     }
 
-    async synthesize(text: string) {
+    async synthesize(text: string, interviewUser: string) {
+        const context = interviewUser === 'Daisy'
+            ? 'Sustainable Energy Systems'
+            : 'Operational Research';
         try {
             const response = await this.openai.chat.completions.create({
                 model: 'gpt-4o',
                 messages: [
                     {
                         role: 'system',
-                        content: `You are an AI assistant helping with interview notes for an Operational Research scholarship.
+                        content: `You are an AI assistant helping with interview notes for a ${context} scholarship.
             From the provided transcript, extract:
             1. Applicant Name (e.g., Daisy or Richard).
             2. A summary in exactly 3 paragraphs.
@@ -66,16 +69,19 @@ export class AiService {
         }
     }
 
-    async generateQuestions(transcriptContext: string, targetPerson?: string) {
+    async generateQuestions(transcriptContext: string, targetPerson?: string, interviewUser?: string) {
+        const context = interviewUser === 'Daisy'
+            ? 'Sustainable Energy Systems'
+            : 'Operational Research';
         try {
             const response = await this.openai.chat.completions.create({
                 model: 'gpt-4o',
                 messages: [
                     {
                         role: 'system',
-                        content: `You are an AI assistant helping an applicant in a Group Interview for an Operational Research scholarship.
+                        content: `You are an AI assistant helping an applicant in a Group Interview for a ${context} scholarship.
             ${targetPerson ? `Generate 3 "supportive yet insightful" collaborative questions specifically for ${targetPerson} based on their presentation/contributions.` : `Based on the last 5 minutes of transcript, generate 3 "supportive yet insightful" collaborative questions.`}
-            The questions should be suitable for an Operational Research context (e.g., asking about model constraints, social impact, or data sources).
+            The questions should be suitable for a ${context} context (e.g., asking about model constraints, social impact, or data sources).
             The goal is to show the applicant is collaborative and thinks deeply about the problem.
             
             Return the result in JSON format:

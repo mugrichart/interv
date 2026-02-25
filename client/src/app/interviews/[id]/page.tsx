@@ -100,6 +100,7 @@ export default function InterviewDetailPage() {
         formData.append('type', entryType);
         formData.append('addresser', addresser);
         formData.append('addressee', addressee);
+        formData.append('interviewUser', currentUser);
 
         setIsSynthesizing(true);
         setShowModal(false);
@@ -127,7 +128,7 @@ export default function InterviewDetailPage() {
     const handleGenerateSuggestions = async () => {
         setIsLoadingSuggestions(true);
         try {
-            const response = await suggestQuestions(id as string, targetPerson || undefined);
+            const response = await suggestQuestions(id as string, targetPerson || undefined, currentUser);
             setSuggestions(response.data.questions);
         } catch (error) {
             console.error('Error generating suggestions', error);

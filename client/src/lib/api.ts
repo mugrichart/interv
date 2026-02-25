@@ -31,5 +31,5 @@ export const addRecording = (interviewId: string, formData: FormData) =>
         headers: { 'Content-Type': 'multipart/form-data' },
     });
 export const deleteInterview = (id: string) => api.delete<{ success: boolean }>(`/interviews/${id}`);
-export const suggestQuestions = (interviewId: string, targetPerson?: string) =>
-    api.post<{ questions: string[] }>(`/interviews/${interviewId}/suggest-questions`, { targetPerson });
+export const suggestQuestions = (interviewId: string, targetPerson?: string, interviewUser?: string) =>
+    api.post<{ questions: string[] }>(`/interviews/${interviewId}/suggest-questions`, { targetPerson, interviewUser });
