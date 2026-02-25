@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Group Interview Assistant | OR Scholarship",
+  title: "Group Interview Assistant | OR & SES Scholarship",
   description: "AI-powered strategic feedback for Sustainable Energy Systems and Operational Research scholarship applicants.",
 };
 

@@ -24,14 +24,14 @@ export default function LandingPage() {
             Group Interview <span className="text-blue-500">Assistant</span>
           </h1>
           <p className="text-slate-400 text-xl max-w-2xl mx-auto">
-            Operational Research Scholarship MVP. Select your profile to begin transcription and AI-guided feedback.
+            Operational Research & Sustainable Energy Scholarship MVP. Select your profile to begin transcription and AI-guided feedback.
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
           <SelectionCard
             name="Daisy"
-            role="Operational Researcher"
+            role="Mechanical Engineer"
             icon={<User className="w-12 h-12 text-pink-400" />}
             onClick={() => handleSelect('Daisy')}
           />

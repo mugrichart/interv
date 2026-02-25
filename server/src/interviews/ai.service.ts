@@ -29,7 +29,7 @@ export class AiService {
 
     async synthesize(text: string, interviewUser: string) {
         const context = interviewUser === 'Daisy'
-            ? 'Sustainable Energy Systems'
+            ? 'Sustainable Energy Systems (as a Mechanical Engineer)'
             : 'Operational Research';
         try {
             const response = await this.openai.chat.completions.create({
@@ -73,16 +73,17 @@ export class AiService {
         const context = interviewUser === 'Daisy'
             ? 'Sustainable Energy Systems'
             : 'Operational Research';
+        const background = interviewUser === 'Daisy' ? 'Mechanical Engineer' : 'Operational Researcher';
         try {
             const response = await this.openai.chat.completions.create({
                 model: 'gpt-4o',
                 messages: [
                     {
                         role: 'system',
-                        content: `You are an AI assistant helping an applicant in a Group Interview for a ${context} scholarship.
+                        content: `You are an AI assistant helping an applicant (${interviewUser}, a ${background}) in a Group Interview for a ${context} scholarship.
             ${targetPerson ? `Generate 3 "supportive yet insightful" collaborative questions specifically for ${targetPerson} based on their presentation/contributions.` : `Based on the last 5 minutes of transcript, generate 3 "supportive yet insightful" collaborative questions.`}
-            The questions should be suitable for a ${context} context (e.g., asking about model constraints, social impact, or data sources).
-            The goal is to show the applicant is collaborative and thinks deeply about the problem.
+            The questions should be suitable for a ${context} context (e.g., asking about model constraints, social impact, data sources, or ${interviewUser === 'Daisy' ? 'mechanical/engineering feasibility' : 'mathematical optimization'}).
+            The goal is to show the applicant is collaborative and thinks deeply about the problem from their unique perspective.
             
             Return the result in JSON format:
             {
