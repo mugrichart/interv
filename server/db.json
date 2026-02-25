@@ -1,0 +1,42 @@
+{
+  "interviews": [
+    {
+      "id": "a9b70935-611c-42bf-8831-a32036435742",
+      "title": "Richard-interview-2026-02-25",
+      "entries": [
+        {
+          "type": "presentation",
+          "applicantName": "Richard Mugicha",
+          "rawText": "Hi, I'm Richard Mugicha. I'm back to Operational Research Masters at Edinburgh. I'm here to acquire the technical tools needed to solve the last mile problems of my sustainable transport project.",
+          "summary": "Richard Mugicha is pursuing a Master's degree in Operational Research at Edinburgh with a focus on acquiring technical skills. His goal is to tackle the last mile challenges associated with his sustainable transport project. Richard is keen on applying his knowledge to make meaningful contributions to sustainable transport solutions.",
+          "highlights": [
+            "Richard Mugicha is studying for an Operational Research Master's degree at Edinburgh.",
+            "He aims to gain technical expertise to address last mile issues.",
+            "Richard's focus is on a sustainable transport project.",
+            "He is interested in solving practical problems through his research.",
+            "The skills acquired will be used to enhance sustainable transport initiatives."
+          ],
+          "addresser": "Richie",
+          "addressee": "",
+          "timestamp": "2026-02-25T19:42:28.011Z"
+        },
+        {
+          "type": "presentation",
+          "applicantName": "Daisy",
+          "rawText": "Hi, I'm Daisy. I'm a mechanical engineer trying to break into sustainable systems engineering system, sustainable energy systems. And with my mechanical background, I've been able to build machines and tools. But I find them not accessible enough to the general population because of costs and power-shedding. And I think this will help me with that. For more information, visit www.sustainable.org",
+          "summary": "Daisy is a mechanical engineer with a focus on transitioning into sustainable energy systems engineering. With her background in mechanical engineering, she has experience in building machines and tools but recognizes the challenge of accessibility due to cost and power issues. Daisy believes that breaking into sustainable systems engineering will address these challenges and make technological advancements more accessible to the general population.",
+          "highlights": [
+            "Daisy is a mechanical engineer interested in sustainable energy systems.",
+            "She has practical experience in building machines and tools as part of her engineering background.",
+            "Daisy is concerned about the accessibility of technology due to costs and power-shedding.",
+            "Her goal is to leverage sustainable systems engineering to make advancements more accessible.",
+            "For more information about her interests, she referenced the website www.sustainable.org."
+          ],
+          "addresser": "Dee",
+          "addressee": "",
+          "timestamp": "2026-02-25T19:44:21.135Z"
+        }
+      ]
+    }
+  ]
+}
